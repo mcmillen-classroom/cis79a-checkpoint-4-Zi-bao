@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="question_text">Placeholder for first question...</string>
+
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+
+    <string name="next_button">Next</string>
+
+
+    <string name="question_1">In Legend of Zelda games, players usually play as Link</string>
+    <string name="question_2">Is Zelda a boy</string>
+    <string name="question_3">Link wields the master sword</string>
+    <string name="question_4">Link uses a shield</string>
+    <string name="question_5">You have to defeat zelda to beat the game</string>
+
+    <string name="hint_1">People often get his name mix up</string>
+    <string name="hint_2">Link is the boy</string>
+    <string name="hint_3">he is a swordsman</string>
+    <string name="hint_4">He has something to protect him</string>
+    <string name="hint_5">The final boss is a monster</string>
+</resources>
