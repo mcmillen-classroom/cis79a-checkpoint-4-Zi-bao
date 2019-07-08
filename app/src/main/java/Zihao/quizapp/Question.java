@@ -10,6 +10,9 @@ public class Question {
         mHintTextResId = hintTextResId;
     }
 
+    public Question(int textResId, int hintTextResId) {
+    }
+
     public int getTextResId() {
         return mTextResId;
     }
