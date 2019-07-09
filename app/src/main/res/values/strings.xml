@@ -19,4 +19,14 @@
     <string name="hint_3">he is a swordsman</string>
     <string name="hint_4">He has something to protect him</string>
     <string name="hint_5">The final boss is a monster</string>
+    <string name="check_button">Check</string>
+
+
+    <string-array name="question_4_answers">
+        <item>Hylian Shield</item>
+        <item>hylian shield</item>
+        <item>hyian</item>
+        <item>Hylian</item>
+    </string-array>
+
 </resources>

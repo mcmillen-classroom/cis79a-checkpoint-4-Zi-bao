@@ -5,13 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView mTextView;
+    private LinearLayout mTrueFalseContainer;
+    private LinearLayout mFillTheBlankContainer;
+    private EditText mEditText;
+    private Button mCheckButton;
     private TextView mScoreTextView;
     private Button mTrueButton;
     private Button mFalsebutton;
@@ -35,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mTrueButton = (Button) findViewById(R.id.true_button);
         mFalsebutton = (Button) findViewById(R.id.false_button);
         mNextButton = (ImageButton) findViewById(R.id.next_button);
+        mTrueFalseContainer = (LinearLayout) findViewById(R.id.true_false_container);
+        mFillTheBlankContainer = (LinearLayout) findViewById(R.id.fill_the_blank_container);
         mPrevButton = (ImageButton) findViewById(R.id.prev_button);
         mHintButton = (Button) findViewById(R.id.hint_button);
         mResetButton = (Button) findViewById(R.id.reset_button);
@@ -61,11 +69,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mQuestions[0] = new TrueFalseQuestion(R.string.question_1, true,R.string.hint_1);
         mQuestions[1] = new TrueFalseQuestion(R.string.question_2, false,R.string.hint_2);
         mQuestions[2] = new TrueFalseQuestion(R.string.question_3, true,R.string.hint_3);
-        mQuestions[3] = new TrueFalseQuestion(R.string.question_4, true,R.string.hint_4);
+
+        String[] q4Answers =getResources().getStringArray(R.array.question_4_answers);
+        mQuestions[3] = new FillTheBlankQuestion(R.string.question_4, R.string.hint_4, q4Answers);
         mQuestions[4] = new TrueFalseQuestion(R.string.question_5, false,R.string.hint_5);
 
 
-        mTextView.setText(mQuestions[mIndex].getTextResId());
+
         mScoreTextView.setText("Score: "+ mScore);
     }
 
@@ -84,6 +94,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             checkAnswer(false);
 
         }
+        else if (view.getId()==R.id.check_button)
+        {
+            checkAnswer(mEditText.getText().toString());
+        }
 
         else if(view.getId() == R.id.prev_button){
             mIndex--;
@@ -99,6 +113,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mTrueButton.setEnabled(true);
 
 
+            setupQuestion();
+
 
 
 
@@ -111,7 +127,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mScore = 0;
             mScoreTextView.setText("Score: "+ mScore);
         }
-        if(mIndex>4 || mIndex<0){
+        if(mIndex>mQuestions.length-1 || mIndex<0){
             mIndex = 0;
 
         }
@@ -122,15 +138,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
+    public void setupQuestion()
+    {
+        mTextView.setText(mQuestions[mIndex].getTextResId());
+
+        if(mQuestions[mIndex].isTrueFalseQuestion())
+        {
+            mTrueFalseContainer.setVisibility(View.VISIBLE);
+            mFillTheBlankContainer.setVisibility(View.GONE);
+        }
+        else if(mQuestions[mIndex].isFillTheBlankQuestion())
+        {
+            mTrueFalseContainer.setVisibility(View.GONE);
+            mFillTheBlankContainer.setVisibility(View.VISIBLE);
+        }
+    }
     public boolean checkAnswer(boolean userInput){
         if(mQuestions[mIndex].checkAnswer (userInput)){
             mFalsebutton.setEnabled(false);
             mTrueButton.setEnabled(false);
             mScore++;
             mScoreTextView.setText("Score: "+ mScore);
-            Toast myToast = Toast.makeText(this, "You are correct", Toast.LENGTH_SHORT);
-            myToast.show();
-            return true;
 
 
 
@@ -146,6 +175,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
 
+
+    }
+    public boolean checkAnswer(String userInpuut)
+    {
 
     }
 
