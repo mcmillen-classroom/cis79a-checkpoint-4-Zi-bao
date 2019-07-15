@@ -5,12 +5,9 @@ public class Question {
     private int mHintTextResId;
 
 
-    public Question(int textResId, boolean answer, int hintTextResId) {
+    public Question(int textResId, int hintTextResId) {
         mTextResId = textResId;
         mHintTextResId = hintTextResId;
-    }
-
-    public Question(int textResId, int hintTextResId) {
     }
 
     public int getTextResId() {
@@ -22,35 +19,41 @@ public class Question {
     }
 
 
+
     public int getmHintTextResId() {
         return mHintTextResId;
     }
 
-    // stub method - intentionally does nothing
-    // only applies to true false question
-    public boolean checkAnswer(boolean boolResponse) {
+    public boolean checkAnswer(boolean boolResponse)
+    {
         return false;
     }
 
     // stub method
     // only applies to fill the blank question
-    public boolean checkAnswer(String userAnswer) { return false; }
-
-    public boolean isTrueFalseQuestion ()
+    public boolean checkAnswer(String userAnswer)
     {
+        return false;
+    }
+    //stub method
+    public boolean isTrueFalseQuestion(){
+        return false;
+    }
+    //stub
+    public boolean isFillTheBlankQuestion(){
+        return false;
+    }
+    //stub
+    public boolean isMultipleChoiceQuestion(){
         return false;
     }
 
     //stub
-    public boolean isFillTheBlankQuestion()
-    {
+    public boolean checkAnswer(int ans){
         return false;
     }
 
-    //stub
-    public boolean isMultipleChoiceQuestion()
-    {
-        return false;
-    }
+
 
 }
+

@@ -1,11 +1,11 @@
 package Zihao.quizapp;
 
 public class FillTheBlankQuestion extends Question {
+
     private String[] mFillAnswers;
 
-    public FillTheBlankQuestion(int textResId, int hintTextResId, String[] fillAnswers)
-    {
-        super(textResId,hintTextResId);
+    public FillTheBlankQuestion(int textResId, int hintTextResId, String[] fillAnswers) {
+        super(textResId, hintTextResId);
         mFillAnswers = fillAnswers;
     }
 

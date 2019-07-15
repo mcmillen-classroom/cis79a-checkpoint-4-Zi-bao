@@ -9,24 +9,32 @@
 
 
     <string name="question_1">In Legend of Zelda games, players usually play as Link</string>
-    <string name="question_2">Is Zelda a boy</string>
+    <string name="question_2">Zelda is a boy</string>
     <string name="question_3">Link wields the master sword</string>
     <string name="question_4">Link uses a shield</string>
     <string name="question_5">You have to defeat zelda to beat the game</string>
+    <string name="question_6">What is the name of the sword</string>
+    <string name="question_7">What race is Link?</string>
 
     <string name="hint_1">People often get his name mix up</string>
     <string name="hint_2">Link is the boy</string>
-    <string name="hint_3">he is a swordsman</string>
+    <string name="hint_3">He is a swordsman</string>
     <string name="hint_4">He has something to protect him</string>
     <string name="hint_5">The final boss is a monster</string>
+    <string name="hint_6">Play the game</string>
+    <string name="hint_7">What does he look like</string>
     <string name="check_button">Check</string>
 
+    <string-array name="question_6_answers">
+        <item>Master Sword</item>
+        <item>master sword</item>
+    </string-array>
 
-    <string-array name="question_4_answers">
-        <item>Hylian Shield</item>
-        <item>hylian shield</item>
-        <item>hyian</item>
-        <item>Hylian</item>
+    <string-array name="question_7_answers">
+        <item> A pokemon</item>
+        <item>A Hylian</item>
+        <item>A monster</item>
+        <item>A fish</item>
     </string-array>
 
 </resources>
